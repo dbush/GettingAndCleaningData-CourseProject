@@ -62,8 +62,6 @@ readData <- function() {
   
   tidy <- cbind(subject, Y, X)
   
-  # write.table(names(tidy), "tidy-names.txt")
-  
   tidy
 }
 
@@ -73,7 +71,7 @@ writeTidy <- function(tidy) {
 }
 
 # Generate and output averages to a file
-writeAverages <- function(tidy){
+writeAverages <- function(tidy) {
   library(data.table)
   
   dtTidy <- data.table(tidy)
@@ -81,8 +79,9 @@ writeAverages <- function(tidy){
   averages <- dtTidy[, lapply(.SD, mean), by=c("subject", "activity")]
   averages <- averages[order(averages$subject, averages$activity),]  
   
-  write.table(averages, "averages.txt") 
+  write.table(averages, "averages.txt")   
 }
+
 
 # "Wires" the functions above together. Function to run to run the whole 
 # process.

@@ -22,7 +22,7 @@ Repo directory
 |
 ¦   .gitignore
 ¦   CodeBook.md
-¦   getdata-projectfiles-UCI HAR Dataset.zip
+¦   getdata-projectfiles-UCI HAR Dataset.zip  
 ¦   README.md
 ¦   run_analysis.R
 ¦
@@ -79,5 +79,5 @@ Expected output:
 ````
 Two files should be generated in the current directory as specified by the `setcwd(...)` directory:
 
-* tidy.txt - This should contain the a tidied version of the data.
-* averages.txt - This should contain an independent tidy data set with the average of each variable for each activity and each subject. 
+* tidy.txt - This should contain the tidied version of the data (step 1 of the instructions).
+* averages.txt - This should contain an independent tidy data set with the average of each variable for each activity and each subject (step 5 of the instructions). 

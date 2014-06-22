@@ -1,5 +1,5 @@
 # Script configuration
-dataPath <- "C:\\Users\\dbush.BDQ\\Google Drive\\2014-05-06 Getting and Cleaning Data\\PeerAssessment\\GettingAndCleaningData-CourseProject\\getdata-projectfiles-UCI HAR Dataset\\UCI HAR Dataset";
+dataPath <- "C:\\Users\\dbush.BDQ\\Documents\\GitHub\\GettingAndCleaningData-CourseProject\\getdata-projectfiles-UCI HAR Dataset\\UCI HAR Dataset";
 dirSeparator <- "\\"
 
 
@@ -63,6 +63,8 @@ readData <- function() {
   subject <- readSubject()
   
   tidy <- cbind(subject, Y, X)
+  
+  # write.table(names(tidy), "tidy-names.txt")
   
   tidy
 }

@@ -1,7 +1,7 @@
 CodeBook
 ========
 
-This codebook describes 
+This codebook describes the tidy data set generated for the Getting and Cleaning Data Coursera course project and the run_analysis.R script.
 
 Source Data
 -----------
@@ -96,7 +96,7 @@ run()
 Running the Script
 -----------------
 
-Please refer to the README.md file that accompanies this code book.
+Please refer to the [README.md](README.md) file that accompanies this code book.
 
 Output file
 -----------

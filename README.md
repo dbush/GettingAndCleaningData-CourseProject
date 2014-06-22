@@ -10,12 +10,13 @@ To run the script:
 * Clone this repository.
 * Download the data from this [link](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) to the same directory as the run_analysis.R file.
 * Extact the contents of the zip file, retaining the directory layout. 
-* Set the current directory to be the same directory as the run_analysis.R file using the `setwd(...)` function.
+* Set the current directory to be the same directory as the run_analysis.R file using the `setwd(...)` function or use the `Tools | Change Working Dir...` menu in RStudio.
 * `source('run_analysis.R')` to load the run_analysis.R script.
 * Execute the `run()` function to run the process.
 
 Expected file layout:
 ---------------------
+
 
 ````
 Repo directory

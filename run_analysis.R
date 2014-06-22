@@ -1,18 +1,16 @@
 # Script configuration
-dataPath <- "C:\\Users\\dbush.BDQ\\Documents\\GitHub\\GettingAndCleaningData-CourseProject\\getdata-projectfiles-UCI HAR Dataset\\UCI HAR Dataset";
-dirSeparator <- "\\"
-
+dataPath <- file.path(getwd(), "getdata-projectfiles-UCI HAR Dataset", "UCI HAR Dataset")
 
 # Reads the X data files into R and modifies the column names and extracts just
 # the mean and standard deviation columns.
 readX <- function() {
   print("Reading X...")
   
-  trainFile <- read.table(paste(dataPath, "train", "X_train.txt", sep=dirSeparator))
-  testFile <- read.table(paste(dataPath, "test", "X_test.txt", sep=dirSeparator))
+  trainFile <- read.table(file.path(dataPath, "train", "X_train.txt"))
+  testFile <- read.table(file.path(dataPath, "test", "X_test.txt"))
   X <- rbind(trainFile, testFile)
   
-  features <- read.table(paste(dataPath, "features.txt", sep=dirSeparator))
+  features <- read.table(file.path(dataPath, "features.txt"))
   meanOrStdFeatures <- grep("-mean\\(\\)|-std\\(\\)", features[, 2])
   X <- X[, meanOrStdFeatures]
   names(X) <- features[meanOrStdFeatures, 2]
@@ -27,11 +25,11 @@ readX <- function() {
 readY <- function() {
   print("Reading Y...")
   
-  trainFile <- read.table(paste(dataPath, "train", "y_train.txt", sep=dirSeparator))
-  testFile <- read.table(paste(dataPath, "test", "y_test.txt", sep=dirSeparator))
+  trainFile <- read.table(file.path(dataPath, "train", "y_train.txt"))
+  testFile <- read.table(file.path(dataPath, "test", "y_test.txt"))
   Y <- rbind(trainFile, testFile)  
   
-  activityLabels <- read.table(paste(dataPath, "activity_labels.txt", sep=dirSeparator))
+  activityLabels <- read.table(file.path(dataPath, "activity_labels.txt"))
   activityLabels[, 2] <- gsub("_", " ", activityLabels[, 2])
   activityLabels[, 2] <- tolower(activityLabels[, 2])
   
@@ -46,8 +44,8 @@ readY <- function() {
 readSubject <- function() {
   print("Reading Subject...")
   
-  trainFile <- read.table(paste(dataPath, "train", "subject_train.txt", sep=dirSeparator))
-  testFile <- read.table(paste(dataPath, "test", "subject_test.txt", sep=dirSeparator))
+  trainFile <- read.table(file.path(dataPath, "train", "subject_train.txt"))
+  testFile <- read.table(file.path(dataPath, "test", "subject_test.txt"))
   subject <- rbind(trainFile, testFile)  
 
   names(subject) <- "subject"
